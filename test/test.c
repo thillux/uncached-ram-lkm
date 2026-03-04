@@ -1,3 +1,4 @@
+#include <bits/time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -27,7 +28,7 @@ double time_now(void)
 {
 #if _POSIX_TIMERS > 0
         struct timespec now;
-        clock_gettime(CLOCK_REALTIME, &now);
+        clock_gettime(CLOCK_MONOTONIC, &now);
         return now.tv_sec + now.tv_nsec/1000000000.0;
 #else
         struct timeval now;
