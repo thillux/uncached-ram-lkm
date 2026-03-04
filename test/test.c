@@ -64,7 +64,7 @@ int main(int ac, char **av)
 	if (ac != 3)
 		usage(ac, av);
 
-	int uncached_mem_test;
+	int uncached_mem_test = 0;
 	if      (!strcmp(av[1], "uncached"))  uncached_mem_test = 1;
 	else if (!strcmp(av[1], "cached"))    uncached_mem_test = 0;
 	else    usage(ac, av);
